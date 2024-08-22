@@ -1,0 +1,181 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{cheque_number}-{bank_appriviation}",
+ "creation": "2024-08-20 22:34:09.946998",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_kbz6",
+  "cheque_number",
+  "bank",
+  "bank_appriviation",
+  "bank_account",
+  "amended_from",
+  "party_type",
+  "paid_date",
+  "attach_image_bhtz",
+  "image_dcun",
+  "column_break_yyow",
+  "cheque_due_date",
+  "cheque_posting_date",
+  "status",
+  "amount",
+  "party",
+  "party_name",
+  "against_account",
+  "default_bank_collected_account",
+  "company",
+  "from_payment_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_kbz6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payaple Cheque",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "cheque_number",
+   "fieldtype": "Data",
+   "label": "Cheque Number"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "options": "Bank Apprivaition List"
+  },
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Bank Account"
+  },
+  {
+   "fieldname": "column_break_yyow",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cheque_due_date",
+   "fieldtype": "Date",
+   "label": "Cheque Due Date"
+  },
+  {
+   "fieldname": "cheque_posting_date",
+   "fieldtype": "Date",
+   "label": "Cheque Posting Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Issued\nFully Collected\nReturned\nCancel"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "default": "Supplier",
+   "fieldname": "party_type",
+   "fieldtype": "Link",
+   "label": "Party Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "label": "Party",
+   "options": "party_type"
+  },
+  {
+   "fieldname": "party_name",
+   "fieldtype": "Data",
+   "label": "Party Name"
+  },
+  {
+   "fieldname": "paid_date",
+   "fieldtype": "Date",
+   "label": "Paid Date"
+  },
+  {
+   "fieldname": "attach_image_bhtz",
+   "fieldtype": "Attach Image"
+  },
+  {
+   "fieldname": "image_dcun",
+   "fieldtype": "Image",
+   "options": "attach_image_bhtz"
+  },
+  {
+   "fetch_from": "bank.bank_app",
+   "fieldname": "bank_appriviation",
+   "fieldtype": "Data",
+   "label": "Bank Appriviation"
+  },
+  {
+   "fieldname": "against_account",
+   "fieldtype": "Link",
+   "label": "Against Account",
+   "options": "Account"
+  },
+  {
+   "fetch_from": "bank_account.account",
+   "fieldname": "default_bank_collected_account",
+   "fieldtype": "Link",
+   "label": "Default Bank Collected Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "from_payment_entry",
+   "fieldtype": "Link",
+   "label": "From Payment Entry",
+   "options": "Payment Entry"
+  }
+ ],
+ "image_field": "attach_image_bhtz",
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-20 22:57:46.639262",
+ "modified_by": "Administrator",
+ "module": "Cheque Module",
+ "name": "Payaple Cheque",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

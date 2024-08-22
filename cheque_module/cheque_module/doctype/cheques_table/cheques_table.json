@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-16 15:40:54.216118",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "cheque_details_section",
+  "cheque_number",
+  "cheque_due_date",
+  "column_break_awqw",
+  "cheque_amount",
+  "against_bank",
+  "section_break_npcb",
+  "cheque_type",
+  "column_break_eyxm",
+  "attach_image",
+  "cheque_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "cheque_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Cheque Number"
+  },
+  {
+   "fieldname": "cheque_due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Cheque Due Date"
+  },
+  {
+   "fieldname": "column_break_awqw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cheque_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Cheque Amount"
+  },
+  {
+   "fieldname": "against_bank",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Against Bank",
+   "options": "Bank Apprivaition List"
+  },
+  {
+   "fieldname": "cheque_details_section",
+   "fieldtype": "Section Break",
+   "label": "Cheque Details"
+  },
+  {
+   "fieldname": "section_break_npcb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cheque_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Cheque Type",
+   "options": "\nMestar"
+  },
+  {
+   "fieldname": "column_break_eyxm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach_image",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Attach Image"
+  },
+  {
+   "fieldname": "cheque_image",
+   "fieldtype": "Image",
+   "label": "Cheque Image",
+   "options": "attach_image"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-16 19:23:23.092796",
+ "modified_by": "Administrator",
+ "module": "Cheque Module",
+ "name": "Cheques Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

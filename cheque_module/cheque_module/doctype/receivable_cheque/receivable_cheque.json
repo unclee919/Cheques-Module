@@ -1,0 +1,228 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{customer_bank_abb}-{cheque_number}",
+ "creation": "2024-08-16 15:50:30.287216",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_hz8z",
+  "cheque_number",
+  "customer_bank",
+  "customer_bank_abb",
+  "amended_from",
+  "column_break_muqg",
+  "cheque_amount",
+  "posting_date",
+  "due_date",
+  "company",
+  "cheque_info_section",
+  "collection_date",
+  "customer",
+  "customer_name",
+  "from_payment_entry",
+  "source_mode_of_payment",
+  "attach_cheque_image",
+  "cheque_image",
+  "column_break_ltdx",
+  "status",
+  "against_account",
+  "location",
+  "store_in_bank",
+  "store_in_bank_account",
+  "move_to_bank_date",
+  "bank_company_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_hz8z",
+   "fieldtype": "Section Break",
+   "label": "Cheque Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Receivable Cheque",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "cheque_number",
+   "fieldtype": "Int",
+   "label": "Cheque Number"
+  },
+  {
+   "fieldname": "customer_bank",
+   "fieldtype": "Link",
+   "label": "Customer Bank",
+   "options": "Bank Apprivaition List"
+  },
+  {
+   "fieldname": "column_break_muqg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cheque_amount",
+   "fieldtype": "Currency",
+   "label": "Cheque Amount"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Data",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "cheque_info_section",
+   "fieldtype": "Section Break",
+   "label": "Cheque Info"
+  },
+  {
+   "fieldname": "collection_date",
+   "fieldtype": "Date",
+   "label": "Collection Date"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer ",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "column_break_ltdx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Under Collection\nFully Collected\nBounced\nCancelled"
+  },
+  {
+   "fieldname": "against_account",
+   "fieldtype": "Link",
+   "label": "Against Account",
+   "options": "Account"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Treasury Safe",
+   "fieldname": "location",
+   "fieldtype": "Select",
+   "label": "Location",
+   "options": "\nTreasury Safe\nBank\nCustomer",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "store_in_bank",
+   "fieldtype": "Link",
+   "label": "Store In Bank",
+   "options": "Bank",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "store_in_bank_account",
+   "fieldtype": "Link",
+   "label": "Store In Bank Account",
+   "options": "Bank Account",
+   "read_only": 1
+  },
+  {
+   "fieldname": "from_payment_entry",
+   "fieldtype": "Link",
+   "label": "From Payment Entry",
+   "options": "Payment Entry",
+   "search_index": 1
+  },
+  {
+   "fieldname": "cheque_image",
+   "fieldtype": "Image",
+   "label": "Cheque Image",
+   "options": "attach_cheque_image"
+  },
+  {
+   "fieldname": "attach_cheque_image",
+   "fieldtype": "Attach",
+   "label": "Attach Cheque Image"
+  },
+  {
+   "fetch_from": "customer_bank.bank_app",
+   "fieldname": "customer_bank_abb",
+   "fieldtype": "Data",
+   "label": "Customer Bank Abb"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "move_to_bank_date",
+   "fieldtype": "Date",
+   "label": "Move to Bank Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "store_in_bank_account.account",
+   "fieldname": "bank_company_account",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Bank Company Account",
+   "options": "Account",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "from_payment_entry.mode_of_payment",
+   "fieldname": "source_mode_of_payment",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Source Mode of Payment",
+   "options": "Mode of Payment",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-17 23:03:41.863577",
+ "modified_by": "Administrator",
+ "module": "Cheque Module",
+ "name": "Receivable Cheque",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
