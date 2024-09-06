@@ -79,6 +79,10 @@ frappe.ui.form.on('Receivable Cheque', {
             payment_entry.reference_date = frm.doc.due_date; // Adjust this mapping as needed
             payment_entry.company = frm.doc.company; // Adjust this mapping as needed
             frappe.set_route('form', 'Payment Entry', payment_entry.name);
+            payment_entry.custom_cheque_type = 'Receivable Cheque';
+            payment_entry.custom_cheque_link = frm.doc.name;
+            payment_entry.custom_action_taken = 'Collect Cash';
+            payment_entry.custom_status_before_action = frm.doc.status;
         });
 
         // Navigate to a new Payment Entry record for 'Collect Bank' with field mappings
@@ -96,6 +100,10 @@ frappe.ui.form.on('Receivable Cheque', {
             payment_entry.reference_date = frm.doc.due_date; // Adjust this mapping as needed
             payment_entry.company = frm.doc.company; // Adjust this mapping as needed
             frappe.set_route('form', 'Payment Entry', payment_entry.name);
+            payment_entry.custom_cheque_type = 'Receivable Cheque';
+            payment_entry.custom_cheque_link = frm.doc.name;
+            payment_entry.custom_action_taken = 'Collect Bank';
+            payment_entry.custom_status_before_action = frm.doc.status;
         });
 
         // Other action items
@@ -113,6 +121,10 @@ frappe.ui.form.on('Receivable Cheque', {
             payment_entry.reference_date = frm.doc.due_date; // Adjust this mapping as needed
             payment_entry.company = frm.doc.company; // Adjust this mapping as needed
             frappe.set_route('form', 'Payment Entry', payment_entry.name);
+            payment_entry.custom_cheque_type = 'Receivable Cheque';
+            payment_entry.custom_cheque_link = frm.doc.name;
+            payment_entry.custom_action_taken = 'Bounce';
+            payment_entry.custom_status_before_action = frm.doc.status;
             frappe.msgprint(__('Bounce action executed')); // Add your custom logic here
         });
 
